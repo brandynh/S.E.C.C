@@ -1,0 +1,53 @@
+<!-- Create a New Project! -->
+
+<!-- Buttons / Links --> 
+    <!-- Link back to Homepage (HAVE NOT ADDED LINK) -->
+<div class = "logout">
+    <a href = ""> Logout</a>
+</div>
+    <!-- Link back to Project Page (HAVE NOT ADDED LINK) --> 
+<div class = "projects">
+    <a href = "" > Projects </a>
+</div>
+
+<!-- Link to add a Project by Code (HAVE NOT ADDED LINK) --> 
+<div class = "code">
+    <a href = "" > Add Project Code </a>
+</div>
+
+
+    <!-- Welcome with Name Display --> 
+<div class = "welcome">
+{{#if name}}
+<h2> Welcome, {{ name }} </h2>
+{{else}}
+<h2> Welcome, Unknown Name </h2>
+{{/if}}
+</div>
+
+
+<!-- Project Form --> 
+<h2> Create a New Project </h2>
+<form class = "new-project-form">
+    <!-- Project Name -->
+<div class = "form-group">
+    <h3 class = "project-name"> Project Name: </h3>
+    <input class = "form-input" type = "search" id = "project-input" name = "project-name" />
+</div>
+    <!-- Project Description --> 
+<div class = "form-group">
+    <h3 class = "description-name"> Project Description </h3>
+    <input class = "form-input" type = "search" id = "description-input" name = "description-name" />
+</div>
+    <!-- Project Manager Confirm --> 
+<div class = "form-group">
+    <h3 class = "manager-name"> Project Manager? </h3>
+    <input class = "form-input" type = "checkbox" id = "manager-input" name = "manager-name" />
+</div>
+    <!-- Create Button -->
+<div class = "form-group">
+    <button type = "submit" class = "btn-submit" > Create Project </button>
+</div>
+
+</form>
+
