@@ -2,13 +2,13 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class ProjectLead extends Model {
+class Member extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-ProjectLead.init(
+Member.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -28,6 +28,10 @@ ProjectLead.init(
         isEmail: true,
       },
     },
+    isProjectLead: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -35,24 +39,32 @@ ProjectLead.init(
         len: [8],
       },
     },
+    projectLead_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'projectLead',
+        key: 'id'
+      }
+    },
   },
   {
     hooks: {
-      beforeCreate: async (newProjectLeadData) => {
-        newProjectLeadData.password = await bcrypt.hash(newProjectLeadData.password, 10);
-        return newProjectLeadData;
+      beforeCreate: async (newMemberData) => {
+        newMemberData.password = await bcrypt.hash(newMemberData.password, 10);
+        return newMemberData;
       },
-      beforeUpdate: async (updatedProjectLeadData) => {
-        updatedProjectLeadData.password = await bcrypt.hash(updatedProjectLeadData.password, 10);
-        return updatedProjectLeadData;
+      beforeUpdate: async (updatedMemberData) => {
+        updatedMemberData.password = await bcrypt.hash(updatedMemberData.password, 10);
+        return updatedMemberData;
       },
+      
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'projectLead',
+    modelName: 'member',
   }
 );
 
-module.exports = ProjectLead;
+module.exports = Member;
