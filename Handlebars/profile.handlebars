@@ -1,0 +1,36 @@
+<!-- Page where Projects are Displayed -->
+    <div class = "project-container">
+         <h1> Your Current Projects </h1>
+    <nav class = "nav">
+        <!-- Link that will Logout the User (LINK NOT ADDED) -->
+        <a href = ""> LogOut </a>
+        <br> 
+        <!-- Link that will Create New Project (LINK NOT ADDED) -->
+        <a href = ""> New Project </a>
+        <br>
+        <!-- Link to add code to Add Project (LINK NOT ADDED) -->
+        <a href = ""> Add Project Code </a>
+    </nav>
+       
+
+{{#if projects.length }}
+
+<!-- Display single Project -->
+{{#each Projects as |Project|}}
+<div class = "display-project"> 
+    <!-- Project Name --> 
+    <a href = "/project/ {{project.id}}"> {{project.name}} </a>"
+    <!-- Project Description --> 
+    <p> Project Description: {{description }}</p>
+    <!-- Project Created By (Person who created project could be lead but I added option to put that Elsewhere) --> 
+    <p> Created by: {{user.name}} on {{ format_date project.date_created}} </p>
+    <!-- Project Manager (This could be optional but added just in case) -->
+    <p> Project Lead: {{lead.name}} </p>
+ {{/each}}
+    {{/if}}
+</div>
+
+
+    <footer> Made by the Cool Kids Club </footer>
+
+    <!-- Render the Script for the Logout Function and HomePage -->
