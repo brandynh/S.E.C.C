@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class MemberPost extends Model {}
+// May be changed rto ProjectPost
 
 MemberPost.init(
     {
@@ -18,13 +19,13 @@ MemberPost.init(
         comment: {
             type: DataTypes.STRING
         },
-          projectLead_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'member',//changed from `projectLead` to `member`
-              key: 'id'
-            },
-          },
+          // projectLead_id: {
+          //   type: DataTypes.INTEGER,
+          //   references: {
+          //     model: 'member',//changed from `projectLead` to `member`
+          //     key: 'id'
+          //   },
+          // },
          member_id: {
             type: DataTypes.INTEGER,
             references: {
