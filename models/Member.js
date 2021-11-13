@@ -28,7 +28,11 @@ Member.init(
         isEmail: true,
       },
     },
-    isProjectLead: {
+    project_code: {
+      type: DataTypes.STRING,
+
+    },
+    is_project_lead: {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
@@ -38,13 +42,6 @@ Member.init(
       validate: {
         len: [8],
       },
-    },
-    projectLead_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'member', //changed from `projectLead` to `member`
-        key: 'id'
-      }
     },
   },
   {
