@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class MemberPost extends Model {}
+class ProjectPost extends Model {}
 
-MemberPost.init(
+ProjectPost.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -18,13 +18,6 @@ MemberPost.init(
         comment: {
             type: DataTypes.STRING
         },
-          /* projectLead_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'member',//changed from `projectLead` to `member`
-              key: 'id'
-            },
-          }, */
          member_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -37,8 +30,8 @@ MemberPost.init(
             references: {
               model: 'project',
               key: 'id'
-            },
-          },
+            }
+          }
     },
     {
         sequelize,
@@ -49,4 +42,4 @@ MemberPost.init(
     },
     );
 
-    module.exports = MemberPost;
+    module.exports = ProjectPost;
