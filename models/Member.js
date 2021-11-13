@@ -43,6 +43,16 @@ Member.init(
         len: [8],
       },
     },
+<<<<<<< HEAD
+=======
+    /* projectLead_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'member', //changed from `projectLead` to `member`
+        key: 'id'
+      }
+    }, */
+>>>>>>> d9ca0268ff01d304e29bd188677fd3a19b7e2bfa
   },
   {
     hooks: {
