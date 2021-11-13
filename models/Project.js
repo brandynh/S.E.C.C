@@ -34,13 +34,13 @@ Project.init(
         key: 'id',
       },
     },
-    projectLead_id: {
+    /* projectLead_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'member', //changed from `projectLead` to `member`
         key: 'id'
       },
-    },
+    }, */ 
     projectCode: {
       type: DataTypes.STRING,
       allowNull: false,

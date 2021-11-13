@@ -18,13 +18,13 @@ MemberPost.init(
         comment: {
             type: DataTypes.STRING
         },
-          projectLead_id: {
+          /* projectLead_id: {
             type: DataTypes.INTEGER,
             references: {
               model: 'member',//changed from `projectLead` to `member`
               key: 'id'
             },
-          },
+          }, */
          member_id: {
             type: DataTypes.INTEGER,
             references: {
