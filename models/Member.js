@@ -42,7 +42,7 @@ Member.init(
     projectLead_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'projectLead',
+        model: 'member', //changed from `projectLead` to `member`
         key: 'id'
       }
     },
