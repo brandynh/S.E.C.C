@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Member } = require('../../models');
 
 
+
 //Returns a list of all user. FOr development only
 router.get('/allUsers', async (req, res)=>{
     try{
