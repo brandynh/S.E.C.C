@@ -1,19 +1,19 @@
-const signUpFrom = document.getElementById('login-form');
+const signUpFrom = document.getElementById('signup-form');
 console.log(signUpFrom);
 
 const signupUsername = document.getElementById('signupUsername');
 const signupPassword = document.getElementById('signupPassword');
-// const signupName = document.getElementById('signupName');
-// const signupEmail = document.getElementById('signupEmail');
-// const signupPasswordConfirm = document.getElementById('signupPasswordConfirm');
+const signupName = document.getElementById('signupName');
+const signupEmail = document.getElementById('signupEmail');
+const signupPasswordConfirm = document.getElementById('signupPasswordConfirm');
 
 signUpFrom.addEventListener('submit', (e)=>{
     e.preventDefault();
     const username = signupUsername.value;
-    // const name = signupName.value;
-    // const email = signupEmail.value;
+    const name = signupName.value;
+    const email = signupEmail.value;
     const password = signupPassword.value;
-    // const confirmPassword = signupPasswordConfirm.value;
+    const confirmPassword = signupPasswordConfirm.value;
 
     console.log(username);
     console.log(name);
@@ -23,9 +23,9 @@ signUpFrom.addEventListener('submit', (e)=>{
     console.log(confirmPassword);
 
     const newMemberData = {
-        // 'name' : name,
+        'name' : name,
         'username' : username,
-        // 'email' : email,
+        'email' : email,
         'password' : password,
     } 
 
