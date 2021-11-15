@@ -5,7 +5,9 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/', async (req, res) => {
-    res.render('homepage');
+    res.render('homepage', {
+      loggedIn : req.session.loggedIn
+    });
 });
 
 router.get('/project/:id', async (req, res) => {
@@ -29,13 +31,22 @@ router.post('/signup', async (req, res) =>{
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    isProjectLead: false
+    is_project_lead: false
   });
-  res.status(200).json({member: newMember, message: 'New Member created'});
+
+  // save cookie that saves the login or logout feature
+  req.session.save(()=>{
+    req.session.loggedIn = true;
+    res.status(200).json({member: newMember, message: 'New Member created'});
+  });
+
+
   } catch (err){
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;

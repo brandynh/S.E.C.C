@@ -1,5 +1,5 @@
-const signUpFrom = document.getElementById('login-form');
-console.log(signUpFrom);
+const loginFrom = document.getElementById('login-form');
+// console.log(loginFrom);
 
 const signupUsername = document.getElementById('signupUsername');
 const signupPassword = document.getElementById('signupPassword');
@@ -7,7 +7,7 @@ const signupPassword = document.getElementById('signupPassword');
 // const signupEmail = document.getElementById('signupEmail');
 // const signupPasswordConfirm = document.getElementById('signupPasswordConfirm');
 
-signUpFrom.addEventListener('submit', (e)=>{
+loginFrom.addEventListener('submit', (e)=>{
     e.preventDefault();
     const username = signupUsername.value;
     // const name = signupName.value;
@@ -16,11 +16,11 @@ signUpFrom.addEventListener('submit', (e)=>{
     // const confirmPassword = signupPasswordConfirm.value;
 
     console.log(username);
-    console.log(name);
-    console.log(email);
-    console.log(email);
+    // console.log(name);
+    // console.log(email);
+    // console.log(email);
     console.log(password);
-    console.log(confirmPassword);
+    // console.log(confirmPassword);
 
     const newMemberData = {
         // 'name' : name,
@@ -29,13 +29,13 @@ signUpFrom.addEventListener('submit', (e)=>{
         'password' : password,
     } 
 
-    fetch('/signup', {
+    fetch('/api/users/login', {
         method: 'POST',
         JSON: true,
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name, username, email, password})
+        body: JSON.stringify({ username, password })
     }).catch((err) =>{
         console.log(err);
     });

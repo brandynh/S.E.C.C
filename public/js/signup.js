@@ -22,6 +22,8 @@ signUpFrom.addEventListener('submit', (e)=>{
     console.log(password);
     console.log(confirmPassword);
 
+    //new comment
+
     const newMemberData = {
         'name' : name,
         'username' : username,

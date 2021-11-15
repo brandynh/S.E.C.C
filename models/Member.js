@@ -34,7 +34,6 @@ Member.init(
     },
     project_code: {
       type: DataTypes.STRING,
-
     },
     is_project_lead: {
       type: DataTypes.BOOLEAN,
@@ -49,17 +48,18 @@ Member.init(
     },
   },
   {
-    hooks: {
-      beforeCreate: async (newMemberData) => {
-        newMemberData.password = await bcrypt.hash(newMemberData.password, 10);
-        return newMemberData;
-      },
-      beforeUpdate: async (updatedMemberData) => {
-        updatedMemberData.password = await bcrypt.hash(updatedMemberData.password, 10);
-        return updatedMemberData;
-      },
+    //COMENTED OUT FOR DEVELOPER REASONS: Neil
+    // hooks: {
+    //   beforeCreate: async (newMemberData) => {
+    //     newMemberData.password = await bcrypt.hash(newMemberData.password, 10);
+    //     return newMemberData;
+    //   },
+    //   beforeUpdate: async (updatedMemberData) => {
+    //     updatedMemberData.password = await bcrypt.hash(updatedMemberData.password, 10);
+    //     return updatedMemberData;
+    //   },
       
-    },
+    // },
     sequelize,
     timestamps: false,
     freezeTableName: true,
