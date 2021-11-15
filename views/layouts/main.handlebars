@@ -27,10 +27,10 @@
           {{#if loggedIn}}
           <li class="navbar-item"><a href="">Home</a></li>
           <li id="logout" class="navbar-item"><a href="">Logout</a></li>
-          <li class="navbar-item"><a href="">Dashboard</a></li>
+          <li class="navbar-item"><a href="/dashboard">Dashboard</a></li>
           {{else}}
           <li><a class="navbar-item" href="/">Home</a></li>
-          <li><a class="navbar-item" href="/api/users/login">Login</a></li>
+          <li><a class="navbar-item" href="/login">Login</a></li>
           <li><a class="navbar-item" href="/signup">Sign Up</a></li>
           {{/if}}
         </ul>

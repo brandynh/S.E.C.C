@@ -1,8 +1,7 @@
 const router = require('express').Router();
+const session = require('express-session');
 const { Project, Member } = require('../models');
 const withAuth = require('../utils/auth')
-
-
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
@@ -10,43 +9,56 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.get('/project/:id', async (req, res) => {
-  
+router.get('/login', (req, res)=>{
+  console.log('Login Page');
+  if(req.session.loggedIn){
+      res.redirect('/');
+  }
+  res.render('login', {
+      loggedIn: req.session.loggedIn
+  });
+  return;
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  
-});
+
 
 router.get('/signup', (req, res) => {
   res.render('signup')
 });
 
-router.post('/signup', async (req, res) =>{
-  console.log(req.body);
+
+
+//Returns a list of all user. FOr development only
+router.get('/allUsers', async (req, res)=>{
   try{
-    const newMember = await Member.create({
-    name: req.body.name,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    is_project_lead: false
-  });
-
-  // save cookie that saves the login or logout feature
-  req.session.save(()=>{
-    req.session.loggedIn = true;
-    res.status(200).json({member: newMember, message: 'New Member created'});
-  });
-
-
-  } catch (err){
-    console.log(err);
-    res.status(500).json(err);
+      const allMembers = await Member.findAll();
+      res.status(200).json(allMembers); 
+  } catch(err) {
+      console.log(err);
+      res.status(500).json(err);
   }
 });
 
+router.get('/dashboard', (req, res)=>{
+  const memberDashboard = Member.findOne({
+      where: {
+          username: req.session.username,
+          password: req.session.password
+      }
+  })
+  res.render('dashboard', {
+      memberDashboard,
+      loggedIn: req.session.loggedIn
+  })
+});
 
+router.get('/project/:id', async (req, res) => {
+  
+});
+
+// Use withAuth middleware to prevent access to route
+router.get('/profile', async (req, res) => {
+  
+});
 
 module.exports = router;
