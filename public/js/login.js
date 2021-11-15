@@ -29,14 +29,22 @@ loginFrom.addEventListener('submit', (e)=>{
         'password' : password,
     } 
 
-    fetch('/api/users/login', {
+    fetch('api/users/login', {
         method: 'POST',
         JSON: true,
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
+    }).then((response) =>{
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in.');
+        }
     }).catch((err) =>{
         console.log(err);
     });
+
+    
 });

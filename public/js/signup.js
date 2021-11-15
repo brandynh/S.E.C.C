@@ -1,3 +1,5 @@
+
+
 const signUpFrom = document.getElementById('signup-form');
 console.log(signUpFrom);
 
@@ -31,13 +33,19 @@ signUpFrom.addEventListener('submit', (e)=>{
         'password' : password,
     } 
 
-    fetch('/signup', {
+    fetch('api/users/signup', {
         method: 'POST',
         JSON: true,
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({name, username, email, password})
+    }).then((response)=>{
+        if(response.ok){
+            document.location.replace('/')
+        } else{
+            alert('fails to sign up')
+        }
     }).catch((err) =>{
         console.log(err);
     });
