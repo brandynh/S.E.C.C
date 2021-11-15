@@ -1,28 +1,45 @@
-<body>
+
   <h1 class="title is-1"> Team Collaborator Dashboard  </h1>
-  <h3 class="title is-2"> Welcome {{name}} </h3>
+  <h3 class="title is-2"> Welcome, {{{member.name}}} </h3>
 
 <!-- NAVBAR FOR BUTTONS --> 
-  <nav class="navbar"> 
+  {{!-- <nav class="navbar"> 
 
-  </nav>
+  </nav> --}}
 
   <div class="container">
     <div class="box">
-
+      <div class="columns">
+        <div class="column">
+          <h1 class="title is-3">Your Projects</h1>
+          <h1 class="title is-3">Project 1</h1>
+          <h1 class="title is-3">Project 2</h1>
+          <h1 class="title is-3">Project 3</h1>
+        </div>
+        <div class="column">
+          <a href="/create-project"><button class="button is-success">Create Your Own Project</button></a>
+          <a href="/join-project"><button class="button is-warning">Join a Project</button></a>
+        </div>
+      </div>
       
-      <button class = "button"> Edit Post</button>
-      <button class = "button"> Delete Post </button>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <button class = "button is-primary"> Edit Post</button>
+      <button class = "button is-danger"> Delete Post </button>
+      <button class="button is-success">Create</button>
     </div>
   </div>
 
 <!-- FOOTER -->
-  <footer>
+  {{!-- <footer>
     <div class="section">
       <p>
         Team Collaboration&copy; | Neil, Brandyn, Griselda
       </p>
     </div>
-  </footer>
+  </footer> --}}
 
-</body>

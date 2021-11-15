@@ -15,7 +15,7 @@ logout.addEventListener('click', (e)=>{
             .then(e =>{
                 if(e.ok){
                     resolve(e);
-                    document.location.reload();
+                    document.location.replace('/');
                 } else {
                     reject(e);
                 }
