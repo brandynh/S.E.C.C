@@ -24,9 +24,15 @@
         <a href="/login">login</a>
         {{/if}} --}}
         <ul class="navbar-start">
+          {{#if loggedIn}}
+          <li class="navbar-item"><a href="">Home</a></li>
+          <li id="logout" class="navbar-item"><a href="">Logout</a></li>
+          <li class="navbar-item"><a href="">Dashboard</a></li>
+          {{else}}
           <li><a class="navbar-item" href="/">Home</a></li>
           <li><a class="navbar-item" href="/api/users/login">Login</a></li>
           <li><a class="navbar-item" href="/signup">Sign Up</a></li>
+          {{/if}}
         </ul>
       </nav>
     </header>
@@ -44,7 +50,7 @@
   </div>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
