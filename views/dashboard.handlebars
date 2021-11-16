@@ -12,9 +12,12 @@
       <div class="columns">
         <div class="column">
           <h1 class="title is-3">Your Projects</h1>
-          <h1 class="title is-3">Project 1</h1>
-          <h1 class="title is-3">Project 2</h1>
-          <h1 class="title is-3">Project 3</h1>
+          {{#each member.projects}}
+          <div class="columns">
+            <div class="column"><a href=""><h1 class="title is-3">{{name}}</h1></a></div>
+            <div class="column"><a href=""><h1 class="title is-3">{{description}}</h1></a></div>
+          </div>
+          {{/each}}
         </div>
         <div class="column">
           <a href="/create-project"><button class="button is-success">Create Your Own Project</button></a>

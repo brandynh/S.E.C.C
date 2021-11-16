@@ -1,11 +1,6 @@
 const router = require('express').Router();
 const { response } = require('express');
-const { Member } = require('../../models');
-
-
-
-
-
+const { Member, Project } = require('../../models');
 
 router.post('/', async (req, res) => {
   
@@ -42,7 +37,12 @@ router.post('/signup', async (req, res) =>{
           where: {
               username: req.body.username,
               password: req.body.password
-          }
+          },
+          include: [
+              {
+                  model: Project
+              }
+          ]
       });
   
       if(!loggedUser){
@@ -54,6 +54,7 @@ router.post('/signup', async (req, res) =>{
           console.log('session Id: ' + req.sessionID)
           req.session.username = req.body.username;
           req.session.password = req.body.password;
+          //May need to add member id to be passed into project memberid reference
           res.status(200).json({message: 'user logged in'});
           console.log(req.session.loggedIn);
       });
