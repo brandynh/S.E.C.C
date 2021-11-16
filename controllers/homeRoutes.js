@@ -32,11 +32,28 @@ router.get('/signup', (req, res) => {
 //Returns a list of all user. FOr development only
 router.get('/allUsers', async (req, res)=>{
   try{
-      const allMembers = await Member.findAll();
+      const allMembers = await Member.findAll(
+        {
+          include: [{ 
+            model: Project,
+            attributes: ['name', 'description']
+          }]
+        }
+      );
       res.status(200).json(allMembers); 
   } catch(err) {
       console.log(err);
       res.status(500).json(err);
+  }
+});
+
+router.get('/allProjects', async (req, res) =>{
+  try{
+    const allProjects = await Project.findAll();
+    res.status(200).json(allProjects);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
@@ -59,7 +76,11 @@ router.get('/dashboard', async (req, res)=>{
         where: {
             username: req.session.username,
             password: req.session.password
-        }
+        },      
+        include: [{ 
+          model: Project,
+          attributes: ['name', 'description']
+        }]        
     });
 
     if(!memberDashboard){
