@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const session = require('express-session');
 const { Project, Member } = require('../models');
 const withAuth = require('../utils/auth')
@@ -39,17 +40,44 @@ router.get('/allUsers', async (req, res)=>{
   }
 });
 
-router.get('/dashboard', (req, res)=>{
-  const memberDashboard = Member.findOne({
-      where: {
-          username: req.session.username,
-          password: req.session.password
-      }
+router.get('/join-project', (req, res) =>{
+  res.render('addcode', {
+    loggedIn: req.session.loggedIn
   })
-  res.render('dashboard', {
-      memberDashboard,
-      loggedIn: req.session.loggedIn
-  })
+});
+
+router.get('/create-project', (req, res)=>{
+  res.render('createProject', {
+    loggedIn: req.session.loggedIn
+  });
+});
+
+//Dashboard dynamically render Logged in user
+router.get('/dashboard', async (req, res)=>{
+  try{
+    const memberDashboard = await Member.findOne({
+        where: {
+            username: req.session.username,
+            password: req.session.password
+        }
+    });
+
+    if(!memberDashboard){
+      res.status(500).json({message: 'User not found'});
+    }
+    
+    const member = memberDashboard.get({ plain: true })
+
+    console.log(member);
+
+    res.render('dashboard', {
+        member,
+        loggedIn: req.session.loggedIn
+    });
+
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.get('/project/:id', async (req, res) => {
