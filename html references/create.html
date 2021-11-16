@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets Are Linked Below -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel = "stylesheet" href="/public/css/style.css">
+    <title> Create New Project </title>
+
+<!-- THIS ONE IS FINISHED -->
+</head>
+<body class = "has-background-black margin-top">
+    
+
+    <div class="tabs is-toggle is-fullwidth">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span class="icon is-medium"><i class="fas fa-music" aria-hidden="true"></i></span>
+              <span class = "has-text-white"> CREATE </span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-medium"><i class="fas fa-music" aria-hidden="true"></i></span>
+              <span class = "has-text-white"> CURRENT PROJECTS </span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-medium"><i class="fas fa-film" aria-hidden="true"></i></span>
+              <span class = "has-text-white"> DASHBOARD </span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-medium"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+              <span class = "has-text-white"> ADD PROJECT CODE</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+
+    <!-- Navbar for "Create a New Project"
+    <nav class = "navbar" role = "navigation" aria-label= "main navigation">
+      
+        <h4 class = "title is-4"> <a href = ""> LOGOUT </a> </h4>
+        <br>
+   
+        <h4 class = "title is-4"> <a href = "/handlebars/create.handlebars"> DASHBOARD </a> </h4>
+        <br>
+
+        <h4 class = "title is-4"> <a href = "/handlebars/addcode.handlebars"> CURRENT PROJECTS </a> </h4>
+    </nav> -->
+
+
+
+    <!-- Create a New Project! --> 
+<h2 class = "title is-3 has-text-centered has-text-white pulsate"> CREATE A NEW PROJECT </h2>
+
+<!-- Welcome with Name Display --> 
+<div class = "welcome has-text-centered ">
+<h3  class = "subtitle is-5 has-text-white"> Welcome, Name </h3>
+<!-- <h3 class = "has-text-white"> Welcome, Unknown Name </h3> -->
+</div>
+
+<!-- Project Form --> 
+<div class = "container has-background-black">
+    <!-- Project Name -->
+<div class = "form-group">
+    <h3 class = "subtitle is-5 has-text-white"> Project Name: </h3>
+    <input class = "input" type = "search" id = "project-input" name = "project-name" />
+</div>
+    <br> 
+    <!-- Project Description --> 
+<div class = "subtitle is-5">
+    <h3 class = "description-name has-text-white"> Project Description: </h3>
+    <textarea class = "textarea" type = "search" id = "description-input" placeholder="Project Description"> </textarea>
+</div>
+    <br>
+    <!-- Project Manager Confirm (Y/N)--> 
+<div class = "subtitle is-5">
+    <h3 class = "manager-name has-text-white"> Project Manager? </h3>
+    <input class = "form-input" type = "checkbox" id = "manager-input" name = "manager-name" />
+</div>
+    <br>
+    <!-- Create Button -->
+<div class = "form-group">
+    <button type = "submit " class = "button is-medium has-background-link has-text-white" > Create Project </button>
+</div>
+
+</div>
+
+<!-- List the Projects the User is Involved in -->
+<footer class="footer has-background-black">
+    <div class="content has-text-centered">
+      <p class = "has-text-white">
+        Project Collaborator made by Brandyn, Neil, and Griselda </p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
