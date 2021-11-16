@@ -2,16 +2,20 @@
   {
     "name": "The Coolest Project",
     "description": "Ice cold!",
+    "data_created": "Dec 19 1989",
     "projectCode": "coolproject"
+
   },
   {
     "name": "Awesome Project",
     "description": "AwesomeSaucesom",
+    "data_created": "Dec 19 1989",
     "projectCode": "awesomeproject"
   },
   {
     "name": "Practicing Projecting",
     "description": "Practice makes progress",
+    "data_created": "Dec 19 1989",
     "projectCode": "practiceproject"
   }
 ]
