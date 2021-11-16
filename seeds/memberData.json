@@ -1,17 +1,23 @@
 [
   {
     "name": "Brandyn",
+    "username": "b" ,
     "email": "Brandyn@brandyn.com",
+    "is_project_lead": false,
     "password": "password12345"
   },
   {
     "name": "Neil",
+    "username": "n",
     "email": "Neil@neil.com",
+    "is_project_lead": true,
     "password": "password12345"
   },
   {
     "name": "Griselda",
+    "username": "g",
     "email": "Griselda@griselda.com",
+    "is_project_lead": false,
     "password": "password12345"
   }
 ]

@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
-//deleted ProjectLead
-const {ProjectLead, Member, Project } = require('../models');
+const {Member, Project } = require('../models');
 
 const memberData = require('./memberData.json');
 const projectData = require('./projectData.json');
@@ -12,11 +11,6 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-
-  // const projectLeads = await ProjectLead.bulkCreate(projectLeadData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
 
   for (const project of projectData) {
     await Project.create({
