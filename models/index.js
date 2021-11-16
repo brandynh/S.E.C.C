@@ -16,5 +16,12 @@ ProjectPost.belongsTo(Member, {
   foreignKey: 'member_id'
 });
 
+ProjectPost.belongsTo(Project, {
+  foreignKey: 'project_id'
+})
+
+Project.hasMany(ProjectPost, {
+  foreignKey: 'project_id'
+})
 
 module.exports = { Member, ProjectPost, Project };
