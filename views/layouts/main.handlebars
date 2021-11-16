@@ -11,29 +11,31 @@
 
 <body>
   <div class="">
-    <header class="">
+    <header class="has-background-black">
       <h1>
-        <a href="/" class="title is-1">Team Collaboration</a>
+        <a href="/" class="title is-1 has-text-white"> TEAM COLLABORATOR </a>
       </h1>
+
       <nav class="navbar">
-        <!-- Conditionally render login or logout links -->
-        {{!-- {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}} --}}
-        <ul class="navbar-start">
+    
+        <div class="tabs is-toggle is-fullwidth">
           {{#if loggedIn}}
-          <li class="navbar-item"><a href="/">Home</a></li>
-          <li id="logout" class="navbar-item"><a href="">Logout</a></li>
-          <li class="navbar-item"><a href="/dashboard">Dashboard</a></li>
+
+          <li class="navbar-item has-background-black"><a href="/"> HOME </a></li>
+
+          <li id="logout" class="navbar-item has-background-black"><a href=""> LOGOUT </a></li>
+
+          <li class="navbar-item has-background-black"><a href="/dashboard"> DASHBOARD </a></li>
           {{else}}
-          <li><a class="navbar-item" href="/">Home</a></li>
-          <li><a class="navbar-item" href="/login">Login</a></li>
-          <li><a class="navbar-item" href="/signup">Sign Up</a></li>
+
+          <li><a class="navbar-item has-background-black" href="/"> HOME </a></li>
+
+          <li><a class="navbar-item has-background-black" href="/login"> LOGOUT </a></li>
+
+          <li><a class="navbar-item has-background-black" href="/signup"> SIGN UP</a></li>
           {{/if}}
-        </ul>
+        </div>
+
       </nav>
     </header>
     <main class="container container-fluid mt-5">
