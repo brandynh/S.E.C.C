@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +7,52 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
+
+    <!-- <a href="/" class="title is-1 has-text-white"> TEAM COLLABORATOR </a> -->
+     
+<!-- NAVBAR --> 
+<nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-white" href="/"> TEAM COLLABORATOR </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+    <!-- LINKS -->
+   <div class="">
+      <nav class="navbar has-background-black">
+          {{#if loggedIn}}
+          <li class="navbar-item has-background-black"><a href="/"> HOME </a></li>
+          <li class="navbar-item has-background-black"><a href="/dashboard"> DASHBOARD </a></li>
+           <li id="logout" class="navbar-item has-background-black"><a href=""> LOGOUT </a></li>
+          {{else}}
+          <li><a class="navbar-item has-background-black" href="/"> HOME </a></li>
+          <li><a class="navbar-item has-background-black" href="/signup"> SIGN UP</a></li>
+           <li><a class="navbar-item has-background-black" href="/login"> LOGIN </a></li>
+          {{/if}}
+  
+      </nav>
+
+    </div>
+</nav>
+
+
+<!-- ORIGINAL BUTTONS 
   <div class="">
     <header class="has-background-black">
-      <h1>
-        <a href="/" class="title is-1 has-text-white"> TEAM COLLABORATOR </a>
-      </h1>
-
       <nav class="navbar">
-    
         <div class="tabs is-toggle is-fullwidth">
           {{#if loggedIn}}
-
           <li class="navbar-item has-background-black"><a href="/"> HOME </a></li>
-
           <li id="logout" class="navbar-item has-background-black"><a href=""> LOGOUT </a></li>
-
           <li class="navbar-item has-background-black"><a href="/dashboard"> DASHBOARD </a></li>
           {{else}}
-
           <li><a class="navbar-item has-background-black" href="/"> HOME </a></li>
 
           <li><a class="navbar-item has-background-black" href="/login"> LOGOUT </a></li>
@@ -37,7 +62,8 @@
         </div>
 
       </nav>
-    </header>
+    </header> -->
+
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -45,7 +71,7 @@
     <footer>
       <div class="section">
         <p>
-          Team Collaboration&copy; | Neil, Brandyn, Griselda
+          Team Collaborator &copy; | Neil, Brandyn, Griselda
         </p>
       </div>
     </footer>
