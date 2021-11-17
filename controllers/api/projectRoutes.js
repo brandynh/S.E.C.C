@@ -3,6 +3,7 @@ const { json } = require('express');
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { Member } = require('../../models');
+const { ProjectPost } = require('../../models')
 
 router.post('/create-project', async (req, res) => {
     console.log('here');
@@ -33,8 +34,22 @@ router.post('/create-project', async (req, res) => {
     }
 });
 
-router.post('/', withAuth, async (req, res) => {
-
+router.post('/postProject', async (req, res) => {
+    console.log('here')
+    try{
+        const newPost = await ProjectPost.create(
+            {
+                title: req.body.title,
+                comment: req.body.comment,
+                member_id: req.session.memberId,
+                project_id : req.body.projectId
+            }
+        );
+        res.status(200).redirect(req.get('referer'));
+    } catch( err ) {
+        console.log(err)
+        res.status(500).json(err);
+    }
 });
 
 

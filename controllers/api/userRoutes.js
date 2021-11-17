@@ -54,6 +54,7 @@ router.post('/signup', async (req, res) =>{
           console.log('session Id: ' + req.sessionID)
           req.session.username = req.body.username;
           req.session.password = req.body.password;
+          req.session.memberId = loggedUser.get('id');
           //May need to add member id to be passed into project memberid reference
           res.status(200).json({message: 'user logged in'});
           console.log(req.session.loggedIn);

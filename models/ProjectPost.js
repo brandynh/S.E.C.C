@@ -38,7 +38,7 @@ ProjectPost.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'memberPost'
+        modelName: 'projectPost'
     },
     );
 

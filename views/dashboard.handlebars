@@ -28,39 +28,23 @@
 <li>
  <a> <span class = "has-text-white"> DESCRIPTION </span></a>
     </li>
-      </div>
-
-
+    
+    </div>
       <div class="columns">
         <div class="column">
+          <h1 class="title is-3 has-text-centered">Your Projects</h1>
           {{#each member.projects}}
           <div class="columns">
-            <div class="column"><a href=""><h6 class="title is-4 has-text-white">{{name}}</h6></a></div>
-            <div class="column"><a href=""><h6 class="title is-4 has-text-white">{{description}}</h6></a></div>
+            <a href="/projects/{{id}}">
+              <div class="column"><h1 class="title is-3">{{name}}</h1></div>
+              <div class="column"><h1 class="title is-3">{{description}}</h1></div>
+            </a>
           </div>
           {{/each}}
-        </div>
-        
+        </div>   
       </div>
-      
-
     </div>
   </div>
-
-
-
-
-
-
-
-
-<!-- COMMENTED OUT BUTTONS FOR STYLING PURPOSES
-    <div class="box">
-      <button class = "button is-primary"> Edit Post</button>
-      <button class = "button is-danger"> Delete Post </button>
-      <button class="button is-success">Create</button>
-    </div>
-  </div> -->
 
 <!-- FOOTER -->
   {{!-- <footer>
