@@ -1,41 +1,66 @@
-
-  <h1 class="title is-1"> Team Collaborator Dashboard  </h1>
-  <h3 class="title is-2"> Welcome, {{{member.name}}} </h3>
+<!-- PROJECT DASHBOARD -->
+  <h2 class="title is-2 has-text-white"> TEAM COLLABORATOR DASHBOARD </h2>
+  <h3 class="title is-4 has-text-white"> Welcome, {{{member.name}}}! What would you like to do today? </h3>
 
 <!-- NAVBAR FOR BUTTONS --> 
   {{!-- <nav class="navbar"> 
 
   </nav> --}}
 
+<!-- BUTTON CONTAINER --> 
   <div class="container">
+    <div class="btn-c2">
+          <!-- CREATE PROJECT BUTTON -->
+          <a href="/create-project"><button class="button is-normal has-background-link has-text-white">Create Your Own Project</button></a>
+          <!-- JOIN PROJECT BUTTON -->
+          <a href="/join-project"><button class="button is-normal has-background-link has-text-white">Join a Project</button></a>
+        </div>
+
+    <!-- BOX / CONTAINER WHERE PROJECTS WILL BE DISPLAYED -->
     <div class="box">
+    <!-- TABS FOR BOX -->
+          <!-- PAGE TITLE --> 
+  <h4 class="title is-3 has-text-white"> YOUR CURRENT PROJECTS </h4>
+      <div class = "tabs is-toggle is-fullwidth">
+        <li class="">
+      <a> <span class = "has-text-white"> PROJECT NAME </span> </a>
+    </li>
+<li>
+ <a> <span class = "has-text-white"> DESCRIPTION </span></a>
+    </li>
+      </div>
+
+
       <div class="columns">
         <div class="column">
-          <h1 class="title is-3">Your Projects</h1>
           {{#each member.projects}}
           <div class="columns">
-            <div class="column"><a href=""><h1 class="title is-3">{{name}}</h1></a></div>
-            <div class="column"><a href=""><h1 class="title is-3">{{description}}</h1></a></div>
+            <div class="column"><a href=""><h6 class="title is-4 has-text-white">{{name}}</h6></a></div>
+            <div class="column"><a href=""><h6 class="title is-4 has-text-white">{{description}}</h6></a></div>
           </div>
           {{/each}}
         </div>
-        <div class="column">
-          <a href="/create-project"><button class="button is-success">Create Your Own Project</button></a>
-          <a href="/join-project"><button class="button is-warning">Join a Project</button></a>
-        </div>
+        
       </div>
       
 
     </div>
   </div>
 
-  <div class="container">
+
+
+
+
+
+
+
+<!-- COMMENTED OUT BUTTONS FOR STYLING PURPOSES
     <div class="box">
       <button class = "button is-primary"> Edit Post</button>
       <button class = "button is-danger"> Delete Post </button>
       <button class="button is-success">Create</button>
     </div>
-  </div>
+  </div> -->
 
 <!-- FOOTER -->
   {{!-- <footer>

@@ -1,7 +1,6 @@
 body {
-    background-color: black;
+    background-image: url("https://wallpaperaccess.com/full/2413558.jpg");
 }
-
 
 .login{
     border: 3px solid rgb(119, 0, 255);
@@ -10,22 +9,130 @@ body {
     background-color: rgb(19, 19, 19);
 }
 
+/* USED ON: NONE */
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(19, 19, 19);
+}
+
+/* USED ON: SIGNUP (TITLE), LOGIN (WELCOME), DASHBOARD (TITLE) */
 h2 {
     text-align: center;
+}
 
+/* USED ON: SIGNUP (FIELDS), PROFILE (NAME, TITLES), LOGIN (FIELDS), DASHBOARD (WELCOME),
+CREATE (TITLE), */
+h3 {
+ text-align: center;
 
 }
 
+/* USED ON: ADDCODE (TITLE), PROFILE (PROJECT ID), DASHBOARD (PROJECTS TITLE,), ADD CODE (TITLE) */
+h4 {
+    text-align: center;
+}
+
+/* USED ON: HOMEPAGE (TITLE, SUB), CREATE (PROJECT INFO), */
+h5 {
+    text-align: center;
+    padding-top: 10px; 
+}
+
+/* USED ON: DASHBOARD (NAME, DES), */
+.h6 {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 300px;
+
+}
+
+
 .title{
     padding-bottom: 40px;
-    padding-top: 150px;
+    padding-top: 10px;
 }
 
 
 footer {
     text-align: center;
     color: white;
-    padding-top: 160px;
+    padding-top: 300px;
+
+}
+
+/* CREATE PROJECT CONTAINER */
+.box {
+    background-color:rgba(19, 19, 19, 0.644); 
+    border: 3px solid rgba(255, 255, 255, 0.075);
+    border-radius: 15px;
+    padding: 50px;
+    
+}
+
+
+.code-box {
+    background-color:rgba(19, 19, 19, 0.644); 
+    border: 3px solid rgba(255, 255, 255, 0.075);
+    border-radius: 15px;
+    padding: 70px;
+    
+}
+
+.code-container{
+    padding-top: 180px;
+
+}
+
+.input {
+    padding: 10px;
+
+}
+
+.button {
+    padding: 20px;
+}
+
+.columns{
+    padding-left: 20px;
+
+}
+
+nav { 
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+/* CSS FOR THE HOMEPAGE.HANDLEBAR */
+.image {
+    border: 3px solid rgb(119, 0, 255);
+    border-radius: 15px;
+    max-width: 100%;
+    width: 70%;
+    height: auto;
+
+}
+
+.image-container {
+    padding-left: 320px;
+
+}
+
+
+.btn-c {
+    padding-top: 30px;
+    padding-left: 630px;
+    align-items: center;
+
+}
+
+.btn-c2 {
+    padding-bottom: 20px;
+    padding-left: 480px;
+    align-items: center;
 
 }
 
