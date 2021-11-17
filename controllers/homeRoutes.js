@@ -49,7 +49,11 @@ router.get('/allUsers', async (req, res)=>{
 
 router.get('/allProjects', async (req, res) =>{
   try{
-    const allProjects = await Project.findAll();
+    const allProjects = await Project.findAll({
+      include: {
+        model: ProjectPost
+      }
+    });
     res.status(200).json(allProjects);
   } catch (err) {
     console.log(err);
@@ -105,7 +109,7 @@ router.get('/projects/:id', async (req, res) => {
   try{
     const dbProject = await Project.findByPk(req.params.id, {
       include: {
-        model: ProjectPost,
+        model: ProjectPost
       }
     });
 
@@ -115,7 +119,7 @@ router.get('/projects/:id', async (req, res) => {
 
     res.render('projects', { 
       project,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,   
      });
 
   } catch (err) {
