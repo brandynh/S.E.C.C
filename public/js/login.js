@@ -38,7 +38,8 @@ loginFrom.addEventListener('submit', (e)=>{
         body: JSON.stringify({ username, password })
     }).then((response) =>{
         if (response.ok) {
-            document.location.replace('/');
+            setTimeout(function(){ document.location.replace('/'); }, 100);
+            
         } else {
             alert('Failed to log in.');
         }
