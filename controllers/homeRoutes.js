@@ -115,11 +115,13 @@ router.get('/projects/:id', async (req, res) => {
 
     const project = dbProject.get({plain: true});
 
-    console.log(project);
-
-    res.render('projects', { 
+    // console.log(project);
+    const projectId = dbProject.get('id');
+    // console.log(projectId);
+    await res.render('projects', { 
       project,
       loggedIn: req.session.loggedIn,   
+      projectId : projectId
      });
 
   } catch (err) {
@@ -128,9 +130,23 @@ router.get('/projects/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', async (req, res) => {
-  
+router.get('/allPosts', async (req, res) => {
+  try{
+    const allPosts = await ProjectPost.findAll({
+      include: {
+        model: Member,
+      }
+    });
+    // console.log(allPosts);
+    // const posts = allPosts.map((post) =>
+    //   post.get({ plain: true })
+    // );
+
+    res.status(200).json(allPosts);
+} catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+}
 });
 
 module.exports = router;
