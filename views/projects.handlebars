@@ -9,30 +9,16 @@
 <div class="container">
     <div class="box">
         <h1 class="title is-2">Posts</h1>
-        {{#each project.projectPosts as |post|}}
+        {{#each project.projectPosts}}
         <div class="box">
             <div class="columns">
-                <div class="column"><h1 class="title is-3">{{post.title}}</h1></div>
-                <div class="column"><h1 class="title is-5">{{post.comment}}</h1></div>
+                <div class="column"><h1 class="title is-3">{{title}}</h1></div>
+                <div class="column"><h1 class="title is-5">{{comment}}</h1></div>
                 <div class="container">
-                    <h1 id="postId" style="display: none;" class="title is-1">{{post.id}}</h1>
-
-                    <button class = "button is-primary editBtn">Edit Post</button>
-                    <button class = "button is-danger deleteBtn"> Delete Post </button>
+                    <button class = "button is-primary">Edit Post</button>
+                    <button class = "button is-danger"> Delete Post </button>
                 </div>
             </div>
-
-            <div class="container" style="display: none">
-                <form id="updateForm">
-                    <label for="newTitle">Title</label>
-                    <input type="text" id="newTitle" class="input" placeholder="New Title">
-                    <label for="newComment">Comment</label>
-                    <input type="text" id="newComment" class="input" placeholder="New Comment">
-
-                    <button class="button" id="submitEditBtn">Update Post</button>
-                </form>
-            </div>
-
         </div>
         {{/each}}
 
@@ -48,7 +34,7 @@
             <label  for="comment">Project Comment</label>
             <input type="text" class="input" id="comment">
             
-            <button type="submit" id="submitPostBtn" class="button">Create Post</button>
+            <button type="submit" class="button">Create Post</button>
         </form>
     </div>
 </div>
