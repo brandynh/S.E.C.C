@@ -33,6 +33,7 @@ Project.init(
         model: 'member',
         key: 'id',
       },
+      onUpdate: 'CASCADE'
     },
     projectCode: {
       type: DataTypes.STRING,

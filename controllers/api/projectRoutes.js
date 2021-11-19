@@ -98,4 +98,40 @@ router.delete('/projectPost/:id', async (req, res) => {
     }
 });
 
+router.post('/addMember', async(req, res) =>{
+    try{
+        console.log(req.body.projectInputCode)
+        const project = await Project.findOne({
+            where: {
+                projectCode: req.body.projectInputCode
+            }
+        });
+        if(!project){
+            res.status(500).json({message: 'Project Not found'});
+        }
+
+        console.log(project);
+
+        const plainProject = project.get({plain: true});
+
+        const member = await Member.findOne({
+            include: [{model: Project}],
+            where: {
+                id: req.session.memberId
+            }
+        }).catch((err) =>{
+            console.log(err);
+        });
+
+        const plainMember = member.get({plain: true});
+        await member.addProject(project, {selfGranted: true});
+        // await project.addMember(member, {selfGranted: true})
+
+        res.status(200).redirect('/dashboard');
+
+    } catch(err) {
+        console.log(err)
+    }
+});
+
 module.exports = router;

@@ -1,11 +1,19 @@
 const Member = require('./Member');
 const ProjectPost = require('./ProjectPost');
 const Project = require('./Project');
+const ProjectMember = require('./ProjectMember')
 
-Member.hasMany(Project, {
-  foreignKey: 'member_id',
-  onDelete: 'CASCADE'
+Member.belongsToMany(Project, {
+  foreignKey: 'project_id',
+  onDelete: 'CASCADE',
+  through: ProjectMember
 });
+
+Project.belongsToMany(Member, {
+  foreignKey: 'project_id',
+  onDelete: 'CASCADE',
+  through: ProjectMember
+})
 
 Member.hasMany(ProjectPost, {
   foreignKey: 'member_id',

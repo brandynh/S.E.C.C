@@ -22,7 +22,7 @@ ProjectPost.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'member',
-                key: 'id'
+                key: 'id',
             }
           },
           project_id: {
