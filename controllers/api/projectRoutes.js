@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { json } = require('express');
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { Member } = require('../../models');
-const { ProjectPost } = require('../../models')
+const { ProjectPost } = require('../../models');
 
 router.post('/create-project', async (req, res) => {
     console.log('here');
@@ -52,9 +51,51 @@ router.post('/postProject', async (req, res) => {
     }
 });
 
+router.put('/projectPost/:id', async (req, res) =>{
+    console.log('jere')
+    try{
+        const updatedPost = await ProjectPost.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
 
-router.delete('/:id', withAuth, async (req, res) => {
-  
+        // console.log(updatedPost);
+        // updatedPost.title = req.body.newTitle;
+        // updatedPost.comment = req.body.newComment;
+        // updatedPost.save();
+        // updatedPost.save();
+        // console.log(updatedPost);
+        await ProjectPost.update(
+            {
+                title: req.body.newTitle,
+                comment: req.body.newComment
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )
+
+        res.status(200).json({message: 'Requst completed'});
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err); 
+    }
+});
+
+router.delete('/projectPost/:id', async (req, res) => {
+    try{
+        await ProjectPost.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.status(200).json('Delete Success')
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
