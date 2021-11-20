@@ -8,14 +8,14 @@
 
 <div class="container">
     <div class="box">
-        <h1 class="title is-2">Posts</h1>
+        <h1 class="title is-2 has-text-white has-text-centered">Posts</h1>
         {{#each project.projectPosts as |post|}}
         <div class="box">
-            <div class="columns">
-                <div class="column"><p class="title is-3">~~ #{{member_id}}{{{member.name}}} ~~</p></div>
-                <div class="column"><h1 class="title is-3">{{post.title}}</h1></div>
-                <div class="column"><h1 class="title is-5">{{post.comment}}</h1></div>
-                <div class="column"><p class="title is-3">{{format_date date_created}}</p></div>
+            <div class="columns is-vcentered">
+                <div class="column"><p class="title is-3  has-text-white">~~ #{{member_id}}{{{member.name}}} ~~</p></div>
+                <div class="column"><h1 class="title is-3  has-text-white">{{post.title}}</h1></div>
+                <div class="column"><h1 class="title is-5  has-text-white">{{post.comment}}</h1></div>
+                <div class="column"><p class="title is-3  has-text-white">{{format_date date_created}}</p></div>
                 <div class="container">
                     <h1 id="postId" style="display: none;" class="title is-1">{{post.id}}</h1>
 

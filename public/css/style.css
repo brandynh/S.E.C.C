@@ -140,3 +140,15 @@ nav {
     justify-content:space-between ;
 }
 
+.projectInfoFormat:hover{
+    border: 5px rgb(28, 17, 124) solid;
+    border-radius: 1em;
+    background-color: rgba(54, 54, 54, 0.438);
+}
+
+.homepage-cnt{
+    padding: 2em;
+}
+
+
+
