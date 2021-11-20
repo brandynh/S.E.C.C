@@ -44,17 +44,6 @@ Project.init(
   },
   {
 
-    // hooks: {
-    //   beforeCreate: async (newProjectData) => {
-    //     newProjectData.projectCode = await bcrypt.hash(newProjectData.projectCode, 10);
-    //     return newProjectData;
-    //   },
-    //   beforeUpdate: async (updatedProjectData) => {
-    //     updatedProjectData.projectCode = await bcrypt.hash(updatedProjectData.projectCode, 10);
-    //     return updatedProjectData;
-    //   },
-    // },
-
     sequelize,
     timestamps: false,
     freezeTableName: true,
