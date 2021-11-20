@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
 const {Member, Project, ProjectPost } = require('../models');
-
 const memberData = require('./memberData.json');
 const projectData = require('./projectData.json');
 const projectPostData = require('./projectPostData.json');
@@ -18,7 +17,6 @@ const seedDatabase = async () => {
       await Project.create({
         ...project,
         member_id: members[Math.floor(Math.random() * members.length)].id,
-        // projectLead_id: projectLeads[Math.floor(Math.random() * projectLeads.length)].id,
       });
     }
 
@@ -31,7 +29,6 @@ const seedDatabase = async () => {
       await ProjectPost.create({
         ...projectPost,
         project_id: members[Math.floor(Math.random() * projectPosts.length)].id,
-        // projectLead_id: projectLeads[Math.floor(Math.random() * projectLeads.length)].id,
       });
     }
 
