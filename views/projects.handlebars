@@ -12,8 +12,10 @@
         {{#each project.projectPosts as |post|}}
         <div class="box">
             <div class="columns">
+                <div class="column"><p class="title is-3">~~ #{{member_id}}{{{member.name}}} ~~</p></div>
                 <div class="column"><h1 class="title is-3">{{post.title}}</h1></div>
                 <div class="column"><h1 class="title is-5">{{post.comment}}</h1></div>
+                <div class="column"><p class="title is-3">{{format_date date_created}}</p></div>
                 <div class="container">
                     <h1 id="postId" style="display: none;" class="title is-1">{{post.id}}</h1>
 
@@ -43,9 +45,9 @@
 <div class="container">
     <div class="box">
         <form id="projectPostForm" style="display:none">
-            <label  for="title">Project Title</label>
+            <label  for="title">Post Title</label>
             <input type="text" class="input" id="title">
-            <label  for="comment">Project Comment</label>
+            <label  for="comment">Post Body</label>
             <input type="text" class="input" id="comment">
             
             <button type="submit" id="submitPostBtn" class="button">Create Post</button>

@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS project_collaboration;
-CREATE DATABASE project_collaboration;
+DROP DATABASE IF EXISTS secc_data;
+CREATE DATABASE secc_data;
