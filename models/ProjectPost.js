@@ -18,6 +18,11 @@ ProjectPost.init(
         comment: {
             type: DataTypes.STRING
         },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: true,
+            defaultValue: DataTypes.NOW,
+        },
          member_id: {
             type: DataTypes.INTEGER,
             references: {

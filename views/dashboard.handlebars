@@ -28,9 +28,11 @@
         <div class="column">
           <h1 class="title is-3 has-text-centered">Your Projects</h1>
           {{#each member.projects}}
-          <div class="columns">
+          <div class="columns projectInfoFormat">
             <a href="/projects/{{id}}">
               <div class="column"><h1 class="title is-3">{{name}}</h1></div>
+            </a>
+            <a href="/projects/{{id}}">
               <div class="column"><h1 class="title is-3">{{description}}</h1></div>
             </a>
           </div>

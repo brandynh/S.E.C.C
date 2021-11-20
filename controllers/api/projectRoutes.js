@@ -59,13 +59,7 @@ router.put('/projectPost/:id', async (req, res) =>{
                 id: req.params.id
             }
         });
-
-        // console.log(updatedPost);
-        // updatedPost.title = req.body.newTitle;
-        // updatedPost.comment = req.body.newComment;
-        // updatedPost.save();
-        // updatedPost.save();
-        // console.log(updatedPost);
+        
         await ProjectPost.update(
             {
                 title: req.body.newTitle,
