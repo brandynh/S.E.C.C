@@ -1,4 +1,4 @@
-# Project Collaborator 
+# S.E.C.C. (Store, Edit, Create, Collaborate)
 
 # Summary
 For this Project, we were asked to create a full stack application that we will be able to showcase to potential employers, the following requirements for this application included:
@@ -32,11 +32,6 @@ The idea that we came up with for a project was the Project Collaborator, which 
 # What Problem are we Trying to Solve?
 With our app, we are trying to make project collaborating a lot easier, as well as to create, store, edit, and join a project! 
 
-
-# Cool Project Name?
-As a group, we knew the basics of what our application was going to do as well as what it had to offer, but coming up with a super cool name was our next obstacle, which is why we stuck with a simple name that tells the user (almost) everything they need to know about our awesome app. We came up with the name "Project Collaborator" for our app, it's simple, but it says what it needs to say.
-
-
 # Installation of the App
 To install and run this app on your own computer, you must follow the following steps in order to get the app to run successfully:
 
@@ -47,7 +42,7 @@ To install and run this app on your own computer, you must follow the following 
 3) In your integrated terminal, make sure to type in the command "npm install" or "npm i" to download the necessary files, in this case the 'node_modules', to get this app running successfully. 
 
 4) After your node_modules have successfully downloaded into your project folder, go ahead and create an .env file (if it has not been created for you), after that, you must input the following: 
-    - DB_NAME= project_collaboration
+    - DB_NAME= secc_db
     - DB_PASSWORD= * type in your MySQL password if you have one, if not, leave this  blank * 
     - DB_USER= root
 
